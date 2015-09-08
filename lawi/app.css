@@ -5,3 +5,8 @@
 	top: 0px;
 	border-bottom: 1px solid black;
 }
+
+#content{
+	position: relative;
+	top: 150px;
+}
