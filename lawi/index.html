@@ -2,8 +2,72 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" href="app.css">
+		<link rel="stylesheet" href="css/app.css">
 		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin-ext' rel='stylesheet' type='text/css'>
+		<script src="js/app.js" type="text/javascript"></script>
+		<script src="http://api4.mapy.cz/loader.js"></script>
+	    <script>Loader.load(null, { poi: true });</script>
+		<script type="text/javascript">
+			var layers = {};
+			document.addEventListener("DOMContentLoaded", () => {
+				var loader = new ContentLoader();
+			
+	            var mapa = new SMap(document.getElementById("mapParent"), SMap.Coords.fromWGS84(15.4371886, 49.0813136), 14);
+
+		        layers[SMap.DEF_BASE] = mapa.addDefaultLayer(SMap.DEF_BASE);
+		        layers[SMap.DEF_OPHOTO] = mapa.addDefaultLayer(SMap.DEF_OPHOTO);
+		        layers[SMap.DEF_HYBRID] = mapa.addDefaultLayer(SMap.DEF_HYBRID);
+		        layers[SMap.DEF_BASE].enable();
+	            mapa.addDefaultControls();
+
+	            var myMarkers = new SMap.Layer.Marker();
+	            mapa.addLayer(myMarkers);
+	            myMarkers.enable();
+								
+				var office = createMarker(15.4371886, 49.0813136, "Kancelář", "kancelář: Krajířova 15/I, 380 01 Dačice<br>tel: +420 608 352 494", 170, "Kancelář");
+				myMarkers.addMarker(office);
+
+	            var znacky = new SMap.Layer.Marker();
+	            mapa.addLayer(znacky).enable();
+	            var dataProvider = mapa.createDefaultDataProvider();
+	            dataProvider.setOwner(mapa);
+	            dataProvider.addLayer(znacky);
+	            dataProvider.setMapSet(SMap.MAPSET_BASE);
+	            dataProvider.enable();
+	        });
+			
+			function createMarker(E, W, cardHead, cardText, cardWidth, titleText){
+				var obrazek = JAK.mel("img", {src:SMap.CONFIG.img+"/marker/drop-red.png"});
+				var znacka = JAK.mel("div");
+				znacka.appendChild(obrazek);
+				var card = new SMap.Card();
+				var cardHeader = card.getHeader();
+				cardHeader.innerHTML = "<strong>"+cardHead+"</strong>";
+				cardHeader.parentElement.style.cssText += "color:black;";//override globalniho nastaveni
+				card.getBody().innerHTML = cardText+"<br><img src='../css/kancelar.jpg' alt='kancelar' width='150' height='auto'>";
+				card.setSize(cardWidth);
+	            var marker = new SMap.Marker(SMap.Coords.fromWGS84(E, W), "", { title: titleText, url:znacka });
+	            marker.decorate(SMap.Marker.Feature.Card, card);
+				
+				return marker;
+			}
+
+		    function changeMap(map){
+		        layers[SMap.DEF_BASE].disable();
+		        layers[SMap.DEF_OPHOTO].disable();
+		        layers[SMap.DEF_HYBRID].disable();
+				    
+				switch(map){
+				    case SMap.DEF_OPHOTO: { layers[SMap.DEF_OPHOTO].enable(); break; }
+				    case SMap.DEF_HYBRID: {
+				        layers[SMap.DEF_HYBRID].enable();
+				        layers[SMap.DEF_OPHOTO].enable();
+				        break;
+				    }
+					default:{layers[SMap.DEF_BASE].enable();break;}
+				}
+		    }
+		</script>
 	</head>
 	<body>
 		<header class="header">
@@ -18,66 +82,24 @@
 				<div>
 					<p>telefon: +420 384 422 294 (záznamník, fax)</p>
 					<p>mobil: +420 608 352 494</p>
-					<p>e-mail: jkasal(a)email.cz</p> <!--replace with mail to-->
+					<p>e-mail: <a href="mailto:jkasal@email.cz">jkasal [a] email.cz</a></p>
 				</div>
 			</div>
 			
-			<img src="just.gif" alt="" style="position:fixed;right:0px;top:0px;">
+			<img src="css/just.gif" alt="" style="position:fixed;right:0px;top:0px;">
 		</header>
 		<div id="content">
 			<div id="services">
 				<h3 style="width:580px;">Poskytovaná právní pomoc</h3>
-				<div>
-					<h4>Rodinné právo</h4>
-					<ul>
-						<li>porady</li>
-						<li>zastoupení ve sporech o svěření dětí do výchovy</li>
-						<li>zastoupení v řízeních o rozvodu manželství</li>
-					</ul>
-				</div>
-				<div>
-					<h4>Obchodní právo</h4>
-					<ul>
-						<li>porady</li>
-						<li>sepisování obchodních smluv, korespondence a dalších listin</li>
-						<li>zastoupení v soudních sporech</li>
-					</ul>
-				</div>
-				<div>
-					<h4>Správní právo</h4>
-					<ul>
-						<li>zastoupení ve správních řízeních</li>
-						<li>právní pomoc obcím</li>
-					</ul>
-				</div>
-				<div>
-					<h4>Občanské právo</h4>
-					<ul>
-						<li>porady</li>
-						<li>sepisování smluv (převody nemovitostí, nájemní a kupní smlouvy, atd.</li>
-						<li>sepisování korespondence, závětí, právních rozborů</li>
-						<li>zastoupení v soudních sporech</li>
-						<li>zastoupení ve sporech o vlastnictví nemovitostí</li>
-					</ul>
-				</div>
-				<div>
-					<h4>Trestní právo</h4>
-					<ul>
-						<li>porady</li>
-						<li>obhajoba v trestních věcech</li>
-						<li>zastoupení poškozeného v trestním řízení</li>
-					</ul>
-				</div>
-				<div>
-					<h4>Pracovní právo</h4>
-					<ul>
-						<li>porady</li>
-						<li>sepisování smluv, dohod, organizačních písemností</li>
-						<li>zastoupení v pracovních sporech</li>
-					</ul>
+			</div>
+			<div id="mapContainer">
+				<div id="mapParent"></div>
+				<div id="mapBtnHolder">
+	                <button onclick="changeMap(SMap.DEF_BASE)" style="display:inline-block;">Základní</button>
+	                <button onclick="changeMap(SMap.DEF_OPHOTO)" style="display:inline-block;">Letecká</button>
+	                <button onclick="changeMap(SMap.DEF_HYBRID)" style="display:inline-block;">Hybridní</button>
 				</div>
 			</div>
-			<div id="mapContainer"></div>
 			<div id="workingHours">
 				<table>
 					<thead>
@@ -116,10 +138,9 @@
 					</tbody>
 				</table>
 			</div>
-			<div id="announcment">
-				<h3>Oznámení</h3>
-				<p>oznameni 1</p>
-				<p>oznameni 2</p>
+			<div id="announcement">
+				<h3 style="margin-bottom: 5px;">Oznámení</h3>
+				<div id="aItemContainer"></div>
 			</div>
 		</div>
 

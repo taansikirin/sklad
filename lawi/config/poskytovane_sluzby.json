@@ -1,0 +1,48 @@
+{
+	"services":[
+		{
+			"oblast":"Rodinné právo",
+			"sluzby":[
+				"porady",
+				"zastoupení ve sporech o svěření dětí do výchovy",
+				"zastoupení v řízeních o rozvodu manželství"
+			]
+		},{
+			"oblast":"Obchodní právo",
+			"sluzby":[
+				"porady",
+				"sepisování obchodních smluv, korespondence a dalších listin",
+				"zastoupení v soudních sporech"
+			]
+		},{
+			"oblast":"Správní právo",
+			"sluzby":[
+				"zastoupení ve správních řízeních",
+				"právní pomoc obcím"
+			]
+		},{
+			"oblast":"Občanské právo",
+			"sluzby":[
+				"porady",
+				"sepisování smluv (převody nemovitostí, nájemní a kupní smlouvy, atd.",
+				"sepisování korespondence, závětí, právních rozborů",
+				"zastoupení v soudních sporech",
+				"zastoupení ve sporech o vlastnictví nemovitostí"
+			]
+		},{
+			"oblast":"Trestní právo",
+			"sluzby":[
+				"porady",
+				"obhajoba v trestních věcech",
+				"zastoupení poškozeného v trestním řízení"
+			]
+		},{
+			"oblast":"Pracovní právo",
+			"sluzby":[
+				"porady",
+				"sepisování smluv, dohod, organizačních písemností",
+				"zastoupení v pracovních sporech"
+			]
+		}
+	]
+}

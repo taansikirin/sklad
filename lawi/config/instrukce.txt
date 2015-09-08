@@ -1,0 +1,31 @@
+Konfigurační soubor pro oznámení je ve formátu JSON (lze editovat jako text).
+Vzorová položka:
+{
+	"oznameni":[
+		{
+	  		"datum": "DD.MM.YYYY",
+  			"text": "Text oznámení, který může obsahovat formátovací tagy html."
+		}
+	}
+}
+
+Pokud je oznámení více najednou, pak jsou odděleny čárkou:
+{
+	"oznameni":[
+		{
+			"datum": "DD.MM.YYYY",
+		  	"text": "Text oznámení, který může obsahovat formátovací tagy html."
+		},
+		{
+			"datum": "DD.MM.YYYY",
+		  	"text": "Text oznámení, který může obsahovat formátovací tagy html."
+		}
+	]
+}
+
+Pokud nechceš mít zobrazena žádná oznámení, tak všechny položky vymaž (automaticky se v oddelení pro oznámení zobrazí aktuální datum a text 'Žádná oznámení.'). Konfigurační soubor pak bude vypadat následovně:
+{
+	"oznameni":[
+		
+	]
+}

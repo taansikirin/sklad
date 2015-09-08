@@ -1,0 +1,23 @@
+{
+	"oznameni":[
+		{
+			"datum":"07.09.2015",
+			"text":"Testovaci text prvního oznámení."
+		},{
+			"datum":"09.09.2015",
+			"text":"Testovaci text druhého oznámení s tím, že <b>toto je tučne<b>, <i>toto kurzívou<i> a <u>toto podtržené</u>."
+		},{
+			"datum":"10.09.2015",
+			"text":"Testovaci text třetího oznámení s tím, že <span style='color:red;'>toto je červeně</span>, <u><i>toto kurzívou a podtržené<i></u>."
+		},{
+			"datum":"11.09.2015",
+			"text":"Testovaci text čtvrtého oznámení s tím, že <br> zde byl text zalomen na nový řádek."
+		},{
+			"datum":"12.09.2015",
+			"text":"Testovaci text pátého oznámení s tím, že <a href='http://www.advokatkasal.net' target='_blank'>toto je link</a>."
+		},{
+			"datum":"13.09.2015",
+			"text":"Testovaci text šestého oznámení s tím, že tento text uděláme co nejdelší, aby se přirozeně zalomil na více řádků. Testovaci text šestého oznámení s tím, že tento text uděláme co nejdelší, aby se přirozeně zalomil na více řádků. Testovaci text šestého oznámení s tím, že tento text uděláme co nejdelší, aby se přirozeně zalomil na více řádků. Testovaci text šestého oznámení s tím, že tento text uděláme co nejdelší, aby se přirozeně zalomil na více řádků. Testovaci text šestého oznámení s tím, že tento text uděláme co nejdelší, aby se přirozeně zalomil na více řádků."
+		}
+	]
+}
