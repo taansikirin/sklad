@@ -3,27 +3,32 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="app.css">
+		<link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin-ext' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<header class="header">
-			<div style="float:left;">
-				<h1>Mgr. Jiri Kasal, advokat</h1>
-				<p>kancelar: <b>Krajířova 15/I, 380 01 Dačice</b></p>
-				<p style="font-decoration:italic;">(zapsané sídlo: Tovární 337, 580 20 Třešť)</p>
-				<br>
-				<p style="font-decoration:italic;"></p>
-				<p>telefon: 384 422 294 (záznamník, fax)</p>
-				<p>mobil: 608 352 494</p>
-				<p>e-mail: jkasal(a)email.cz</p> <!--replace with mail to-->
+			<div style="width: inherit;margin-left: 0px;">
+				<h1 style="text-align:center;width:100%;">Mgr. Jiří Kasal, advokát</h1>
+				<div>
+					<p>kancelář: <b>Krajířova 15/I, 380 01 Dačice</b></p>
+					<p>(zapsané sídlo: Tovární 337, 580 20 Třešť)</p>
+					<p>zapsán v <a href="http://vyhledavac.cak.cz/Units/_Search/Details/detailAdvokat.aspx?id=53273c04-6f59-499f-8777-38d4ee9c915e" title="Česká advokátní komora" target="_blank">ČAK</a></p>
+					
+				</div>
+				<div>
+					<p>telefon: +420 384 422 294 (záznamník, fax)</p>
+					<p>mobil: +420 608 352 494</p>
+					<p>e-mail: jkasal(a)email.cz</p> <!--replace with mail to-->
+				</div>
 			</div>
 			
-			<img src="just.gif" alt="" style="float:right;">
+			<img src="just.gif" alt="" style="position:fixed;right:0px;top:0px;">
 		</header>
 		<div id="content">
 			<div id="services">
-				<h5>Poskytovana pravni pomoc</h5>
+				<h3 style="width:580px;">Poskytovaná právní pomoc</h3>
 				<div>
-					<h6>Rodinné právo</h6>
+					<h4>Rodinné právo</h4>
 					<ul>
 						<li>porady</li>
 						<li>zastoupení ve sporech o svěření dětí do výchovy</li>
@@ -31,15 +36,93 @@
 					</ul>
 				</div>
 				<div>
-					<h6>Obchodní právo</h6>
+					<h4>Obchodní právo</h4>
 					<ul>
 						<li>porady</li>
 						<li>sepisování obchodních smluv, korespondence a dalších listin</li>
-						<li>zastoupení ve soudních sporech</li>
+						<li>zastoupení v soudních sporech</li>
+					</ul>
+				</div>
+				<div>
+					<h4>Správní právo</h4>
+					<ul>
+						<li>zastoupení ve správních řízeních</li>
+						<li>právní pomoc obcím</li>
+					</ul>
+				</div>
+				<div>
+					<h4>Občanské právo</h4>
+					<ul>
+						<li>porady</li>
+						<li>sepisování smluv (převody nemovitostí, nájemní a kupní smlouvy, atd.</li>
+						<li>sepisování korespondence, závětí, právních rozborů</li>
+						<li>zastoupení v soudních sporech</li>
+						<li>zastoupení ve sporech o vlastnictví nemovitostí</li>
+					</ul>
+				</div>
+				<div>
+					<h4>Trestní právo</h4>
+					<ul>
+						<li>porady</li>
+						<li>obhajoba v trestních věcech</li>
+						<li>zastoupení poškozeného v trestním řízení</li>
+					</ul>
+				</div>
+				<div>
+					<h4>Pracovní právo</h4>
+					<ul>
+						<li>porady</li>
+						<li>sepisování smluv, dohod, organizačních písemností</li>
+						<li>zastoupení v pracovních sporech</li>
 					</ul>
 				</div>
 			</div>
+			<div id="mapContainer"></div>
+			<div id="workingHours">
+				<table>
+					<thead>
+						<tr>
+							<th>den</th>
+							<th>dopoledne</th>
+							<th>odpoledne</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>podělí</td>
+							<td>8:00 - 11:00</td>
+							<td>13:00 - 14:30</td>
+						</tr>
+						<tr>
+							<td>úterý</td>
+							<td>8:00 - 11:00</td>
+							<td>13:00 - 14:30</td>
+						</tr>
+						<tr>
+							<td>středa</td>
+							<td>8:00 - 11:00</td>
+							<td>13:00 - 14:30</td>
+						</tr>
+						<tr>
+							<td>čtvrtek</td>
+							<td>8:00 - 11:00</td>
+							<td>13:00 - 14:30</td>
+						</tr>
+						<tr>
+							<td>pátek</td>
+							<td>zavřeno, pravidelná jednání mimo kancelář</td>
+							<td>stálá klientela</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="announcment">
+				<h3>Oznámení</h3>
+				<p>oznameni 1</p>
+				<p>oznameni 2</p>
+			</div>
 		</div>
+
 		<footer>
 			
 		</footer>
